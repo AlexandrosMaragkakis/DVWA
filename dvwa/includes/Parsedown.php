@@ -169,17 +169,12 @@ class Parsedown
         $Elements = array();
         $CurrentBlock = null;
 
-        foreach ($lines as $line)
-        {
-            if (chop($line) === '')
-            {
-                if (isset($CurrentBlock))
-                {
-                    $CurrentBlock['interrupted'] = (isset($CurrentBlock['interrupted'])
-                        ? $CurrentBlock['interrupted'] + 1 : 1
-                    );
+        foreach ($lines as $line) {
+            $line = trim($line);
+            if ($line === '') {
+                if ($currentBlock) {
+                    $currentBlock['interrupted']++;
                 }
-
                 continue;
             }
 
