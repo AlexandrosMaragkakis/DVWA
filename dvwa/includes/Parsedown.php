@@ -182,10 +182,8 @@ class Parsedown
             {
                 $shortage = 4 - mb_strlen($beforeTab, 'utf-8') % 4;
 
-                $line = $beforeTab
-                    . str_repeat(' ', $shortage)
-                    . substr($line, strlen($beforeTab) + 1)
-                ;
+                $line = $beforeTab . str_repeat(' ', $shortage);
+                $line .= substr($line, strlen($beforeTab) + 1);
             }
 
             $indent = strspn($line, ' ');
