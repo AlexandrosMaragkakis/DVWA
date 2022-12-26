@@ -171,8 +171,7 @@ class Parsedown
 
         foreach ($lines as $line) {
             $line = trim($line);
-            if ($line === '') {
-                if ($currentBlock) {
+            if ($line === '' && $currentBlock) {
                     $currentBlock['interrupted']++;
                 }
                 continue;
