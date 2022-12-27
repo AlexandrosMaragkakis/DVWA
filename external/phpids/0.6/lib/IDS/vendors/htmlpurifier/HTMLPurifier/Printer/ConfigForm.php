@@ -262,6 +262,7 @@ class HTMLPurifier_Printer_ConfigForm_default extends HTMLPurifier_Printer {
                     foreach ($array as $val => $b) {
                         $value[] = $val;
                     }
+                    break;
                 case HTMLPurifier_VarParser::ALIST:
                     $value = implode(PHP_EOL, $value);
                     break;
